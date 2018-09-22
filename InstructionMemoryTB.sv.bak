@@ -1,0 +1,14 @@
+module InstrctionMemoryTB();
+	logic [31:0] address;
+	logic clk;
+	logic instruction
+	
+	initial clk = 0; 
+   always #10 clk = ~clk; 
+
+	InstructionMemory DUT (clk, address, instruction);
+	
+	initial begin
+		address = 0;
+	end
+endmodule
