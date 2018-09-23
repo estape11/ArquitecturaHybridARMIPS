@@ -2,7 +2,7 @@ module Memory (input clk,
 					input wr,
 					input [31:0] address,
 					input [31:0] data_in,
-					output [31:0] data_out);
+					output logic [31:0] data_out);
 	//2^32 = 4 294 967 296
 	//2^28 = 268 435 456
 	
