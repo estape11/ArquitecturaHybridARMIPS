@@ -15,7 +15,7 @@ module Fetch(
 	logic [31:0] PCsumador;
 	
 	Sumador sumador(pc, 1, PCsumador);
-	InstructionMemory memoria_instrucciones(clk, pc, inst);
+	InstructionMemory memoria_instrucciones(pc, inst);
 	
 	always_ff @(posedge clk) begin
 		if (PCsrc)

@@ -1,18 +1,18 @@
-Analysis & Elaboration Status : Successful - Sun Sep 23 23:08:19 2018
+Analysis & Synthesis Status : Successful - Mon Sep 24 01:01:48 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : ArquitecturaHybridARMIPS
-Top-level Entity Name : FetchTB
+Top-level Entity Name : MemoryStage
 Family : Cyclone IV GX
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total GXB Receiver Channel PCS : N/A until Partition Merge
-Total GXB Receiver Channel PMA : N/A until Partition Merge
-Total GXB Transmitter Channel PCS : N/A until Partition Merge
-Total GXB Transmitter Channel PMA : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 138
+Total virtual pins : 0
+Total memory bits : 3,200
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

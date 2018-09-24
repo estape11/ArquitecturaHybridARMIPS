@@ -38,7 +38,7 @@ module FetchTB();
 		
 		#4
 		PCsrc <= 1;
-		PCalu <= 5;*
+		PCalu <= 5;
 		#2
 		PCsrc <= 0;		
 	end

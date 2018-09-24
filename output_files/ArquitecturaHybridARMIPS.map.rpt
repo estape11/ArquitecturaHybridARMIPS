@@ -1,5 +1,5 @@
-Analysis & Elaboration report for ArquitecturaHybridARMIPS
-Sun Sep 23 23:08:19 2018
+Analysis & Synthesis report for ArquitecturaHybridARMIPS
+Mon Sep 24 01:01:48 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -7,12 +7,21 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "Fetch:fetch|Sumador:sumador"
-  6. Port Connectivity Checks: "Fetch:fetch"
-  7. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. General Register Statistics
+ 10. Registers Packed Into Inferred Megafunctions
+ 11. Source assignments for Memory:data_memory|altsyncram:mem_rtl_0|altsyncram_qvd1:auto_generated
+ 12. Parameter Settings for Inferred Entity Instance: Memory:data_memory|altsyncram:mem_rtl_0
+ 13. altsyncram Parameter Settings by Entity Instance
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -36,52 +45,36 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sun Sep 23 23:08:19 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 24 01:01:48 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; ArquitecturaHybridARMIPS                    ;
-; Top-level Entity Name              ; FetchTB                                     ;
+; Top-level Entity Name              ; MemoryStage                                 ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                   ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                   ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                   ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 138                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 3,200                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                  ;
+; Analysis & Synthesis Settings                                                                                    ;
 +------------------------------------------------------------------+--------------------+--------------------------+
 ; Option                                                           ; Setting            ; Default Value            ;
 +------------------------------------------------------------------+--------------------+--------------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                          ;
-; Top-level entity name                                            ; FetchTB            ; ArquitecturaHybridARMIPS ;
+; Top-level entity name                                            ; MemoryStage        ; ArquitecturaHybridARMIPS ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V                ;
 ; Use smart compilation                                            ; Off                ; Off                      ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                       ;
@@ -161,38 +154,225 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------------+
 
 
-+---------------------------------------------------------+
-; Port Connectivity Checks: "Fetch:fetch|Sumador:sumador" ;
-+-----------------+-------+----------+--------------------+
-; Port            ; Type  ; Severity ; Details            ;
-+-----------------+-------+----------+--------------------+
-; sumando2[31..1] ; Input ; Info     ; Stuck at GND       ;
-; sumando2[0]     ; Input ; Info     ; Stuck at VCC       ;
-+-----------------+-------+----------+--------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Fetch:fetch"                                                                                ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; PCsrc        ; Input  ; Info     ; Stuck at GND                                                                        ;
-; PCalu[31..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; PCalu[2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; PCalu[1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; PCalu[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; inst         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; Memory.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv                       ;         ;
+; MemoryStage.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/MemoryStage.sv                  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_qvd1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/db/altsyncram_qvd1.tdf          ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary   ;
++--------------------------+--------------------+
+; Resource                 ; Usage              ;
++--------------------------+--------------------+
+; I/O pins                 ; 138                ;
+; Total memory bits        ; 3200               ;
+;                          ;                    ;
+; DSP block 9-bit elements ; 0                  ;
+;                          ;                    ;
+; Maximum fan-out node     ; ALUresult[0]~input ;
+; Maximum fan-out          ; 33                 ;
+; Total fan-out            ; 526                ;
+; Average fan-out          ; 1.71               ;
++--------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
+; |MemoryStage                              ; 0 (0)               ; 0 (0)                     ; 3200        ; 0            ; 0       ; 0         ; 0         ; 138  ; 0            ; |MemoryStage                                                                        ; MemoryStage     ; work         ;
+;    |Memory:data_memory|                   ; 0 (0)               ; 0 (0)                     ; 3200        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MemoryStage|Memory:data_memory                                                     ; Memory          ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 3200        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MemoryStage|Memory:data_memory|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_qvd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 3200        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MemoryStage|Memory:data_memory|altsyncram:mem_rtl_0|altsyncram_qvd1:auto_generated ; altsyncram_qvd1 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                      ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Memory:data_memory|altsyncram:mem_rtl_0|altsyncram_qvd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 100          ; 32           ; 100          ; 32           ; 3200 ; None ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                             ;
++------------------------------------+------------------------------+------+
+; Register Name                      ; Megafunction                 ; Type ;
++------------------------------------+------------------------------+------+
+; Memory:data_memory|data_out[0..31] ; Memory:data_memory|mem_rtl_0 ; RAM  ;
++------------------------------------+------------------------------+------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source assignments for Memory:data_memory|altsyncram:mem_rtl_0|altsyncram_qvd1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------+
+; Assignment                      ; Value              ; From ; To                              ;
++---------------------------------+--------------------+------+---------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                               ;
++---------------------------------+--------------------+------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Memory:data_memory|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                      ;
+; WIDTH_A                            ; 32                   ; Untyped                      ;
+; WIDTHAD_A                          ; 7                    ; Untyped                      ;
+; NUMWORDS_A                         ; 100                  ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 32                   ; Untyped                      ;
+; WIDTHAD_B                          ; 7                    ; Untyped                      ;
+; NUMWORDS_B                         ; 100                  ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone IV GX        ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_qvd1      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; Memory:data_memory|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                               ;
+;     -- WIDTH_A                            ; 32                                      ;
+;     -- NUMWORDS_A                         ; 100                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
+;     -- WIDTH_B                            ; 32                                      ;
+;     -- NUMWORDS_B                         ; 100                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                               ;
++-------------------------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++----------------------+------------------------------+
+; Type                 ; Count                        ;
++----------------------+------------------------------+
+; boundary_port        ; 138                          ;
+; cycloneiii_ram_block ; 32                           ;
+;                      ;                              ;
+; Max LUT depth        ; 0.00                         ;
+; Average LUT depth    ; 0.00                         ;
++----------------------+------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Sep 23 23:08:02 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS --analysis_and_elaboration
+    Info: Processing started: Mon Sep 24 01:01:30 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file memory.sv
@@ -210,16 +390,55 @@ Info (12021): Found 1 design units, including 1 entities, in source file fetchtb
     Info (12023): Found entity 1: FetchTB File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory.sv
     Info (12023): Found entity 1: InstructionMemory File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv Line: 1
-Info (12127): Elaborating entity "FetchTB" for the top level hierarchy
-Warning (10755): Verilog HDL warning at FetchTB.sv(6): assignments to clk create a combinational loop File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 6
-Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fetch" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 14
-Info (12128): Elaborating entity "Sumador" for hierarchy "Fetch:fetch|Sumador:sumador" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 17
-Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fetch|InstructionMemory:memoria_instrucciones" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 18
-Warning (10858): Verilog HDL warning at InstructionMemory.sv(10): object mem used but never assigned File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv Line: 10
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Sun Sep 23 23:08:19 2018
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:39
+Info (12021): Found 1 design units, including 1 entities, in source file memorystage.sv
+    Info (12023): Found entity 1: MemoryStage File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/MemoryStage.sv Line: 1
+Info (12127): Elaborating entity "MemoryStage" for the top level hierarchy
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:data_memory" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/MemoryStage.sv Line: 15
+Warning (276027): Inferred dual-clock RAM node "Memory:data_memory|mem_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "Memory:data_memory|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 7
+        Info (286033): Parameter NUMWORDS_A set to 100
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 7
+        Info (286033): Parameter NUMWORDS_B set to 100
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "Memory:data_memory|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "Memory:data_memory|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "7"
+    Info (12134): Parameter "NUMWORDS_A" = "100"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "7"
+    Info (12134): Parameter "NUMWORDS_B" = "100"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qvd1.tdf
+    Info (12023): Found entity 1: altsyncram_qvd1 File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/db/altsyncram_qvd1.tdf Line: 27
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 70 input pins
+    Info (21059): Implemented 68 output pins
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Mon Sep 24 01:01:48 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:40
 
 
