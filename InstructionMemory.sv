@@ -1,5 +1,4 @@
 module InstructionMemory (
-					input clk,
 					input [31:0] address,
 					output logic [31:0] data_out
 					);
