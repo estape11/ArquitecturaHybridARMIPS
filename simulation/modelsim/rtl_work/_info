@@ -10,23 +10,23 @@ cModel Technology
 Z0 dD:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim
 vFetch
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1537678404
+Z2 !s110 1537765716
 !i10b 1
-!s100 dfHz5iACY=gCmj7mQV[]Z0
-IR3?YCKRKeW`HEnaZ[Z><=0
+!s100 LMX_SZf8NgZE^h10O0H7E1
+Ii]hB?GbhS1^OI3oRNZNec0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 Fetch_sv_unit
 S1
 R0
-w1537678329
+w1537762637
 8D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv
 FD:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv
-L0 1
+L0 7
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1537678404.000000
+Z5 !s108 1537765716.000000
 !s107 D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS|D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv|
 !i113 1
@@ -36,15 +36,15 @@ Z8 tCvgOpt 0
 n@fetch
 vFetchTB
 R1
-R2
+Z9 !s110 1537765717
 !i10b 1
-!s100 R^biFe6`AVCj^Q@mXY5bj2
-I0Ag1gUBNI>=BC07E;FiY03
+!s100 :mdmW=]>TmY;]zin^boNh2
+IkUiIcDGEJg>38R9^c@MR81
 R3
 !s105 FetchTB_sv_unit
 S1
 R0
-w1537676417
+w1537765650
 8D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv
 FD:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv
 L0 1
@@ -52,7 +52,7 @@ R4
 r1
 !s85 0
 31
-R5
+Z10 !s108 1537765717.000000
 !s107 D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS|D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv|
 !i113 1
@@ -60,43 +60,43 @@ R6
 R7
 R8
 n@fetch@t@b
-vMemory
+vInstructionMemory
 R1
-R2
+R9
 !i10b 1
-!s100 ZW75c;zz<3dU>7Re98>Y22
-I5kgj7TfGQgR:`1Jg?J:]d3
+!s100 3JOaSBjVSBTMflnZnhC:<3
+IY@LGDF4J=Ja<fTBT`l2?63
 R3
-!s105 Memory_sv_unit
+!s105 InstructionMemory_sv_unit
 S1
 R0
-w1537677370
-8D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv
-FD:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv
+w1537765333
+8D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv
+FD:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv
 L0 1
 R4
 r1
 !s85 0
 31
-R5
-!s107 D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS|D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv|
+R10
+!s107 D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS|D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv|
 !i113 1
 R6
 R7
 R8
-n@memory
+n@instruction@memory
 vSumador
 R1
 R2
 !i10b 1
-!s100 6bQOlY[^lZL=`UJ1okIk_3
-I5TQO==]2Dln9]IA]2MP6>0
+!s100 M<PEJRhiICdR6LC45`K@Y3
+IBTGVD]TlJGMTAdJXHJbHL2
 R3
 !s105 Sumador_sv_unit
 S1
 R0
-w1537671559
+w1537747835
 8D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv
 FD:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv
 L0 1

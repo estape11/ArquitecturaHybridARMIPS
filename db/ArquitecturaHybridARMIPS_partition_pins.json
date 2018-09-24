@@ -2,7 +2,392 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "resultado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[4]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[5]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[6]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[7]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[8]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[9]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[10]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[11]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[12]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[13]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[14]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[15]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[16]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[17]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[18]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[19]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[20]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[21]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[22]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[23]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[24]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[25]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[26]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[27]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[28]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[29]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[30]",
+					"strict" : false
+				},
+				{
+					"name" : "resultado[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sumando1[31]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

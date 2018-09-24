@@ -1,5 +1,5 @@
 Flow report for ArquitecturaHybridARMIPS
-Sun Sep 23 15:50:11 2018
+Sun Sep 23 23:08:19 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,24 +40,26 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Sep 23 15:50:11 2018       ;
+; Flow Status                        ; Successful - Sun Sep 23 23:08:19 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; ArquitecturaHybridARMIPS                    ;
-; Top-level Entity Name              ; Fetch                                       ;
+; Top-level Entity Name              ; FetchTB                                     ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 66                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total GXB Receiver Channel PCS     ; 0                                           ;
-; Total GXB Receiver Channel PMA     ; 0                                           ;
-; Total GXB Transmitter Channel PCS  ; 0                                           ;
-; Total GXB Transmitter Channel PMA  ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Device                             ; EP4CGX150DF31C7                             ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -66,7 +68,7 @@ refer to the applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 09/23/2018 15:49:55      ;
+; Start date & time ; 09/23/2018 23:08:03      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; ArquitecturaHybridARMIPS ;
 +-------------------+--------------------------+
@@ -77,40 +79,42 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+--------------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value            ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+--------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 272897473109049.153773939510384        ; --                       ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 272897473109049.153776568313872        ; --                       ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --                       ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>                   ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                       ; Fetch       ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                       ; Fetch       ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                       ; Fetch       ; Top            ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                       ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                       ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                       ; FetchTB     ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                       ; FetchTB     ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                       ; FetchTB     ; Top            ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                       ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; Fetch                                  ; ArquitecturaHybridARMIPS ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; FetchTB                                ; ArquitecturaHybridARMIPS ; --          ; --             ;
 +-------------------------------------+----------------------------------------+--------------------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4809 MB             ; 00:00:39                           ;
-; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:39                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 4801 MB             ; 00:00:39                           ;
+; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:39                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-SEK4V05  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-SEK4V05  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS
+quartus_map --read_settings_files=on --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS --analysis_and_elaboration
 
 
 
