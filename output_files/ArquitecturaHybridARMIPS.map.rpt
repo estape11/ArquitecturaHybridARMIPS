@@ -1,5 +1,5 @@
 Analysis & Elaboration report for ArquitecturaHybridARMIPS
-Sat Sep 22 20:46:24 2018
+Sun Sep 23 23:08:19 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -10,7 +10,9 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "Fetch:fetch|Sumador:sumador"
+  6. Port Connectivity Checks: "Fetch:fetch"
+  7. Analysis & Elaboration Messages
 
 
 
@@ -36,10 +38,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sat Sep 22 20:46:24 2018       ;
+; Analysis & Elaboration Status      ; Successful - Sun Sep 23 23:08:19 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; ArquitecturaHybridARMIPS                    ;
-; Top-level Entity Name              ; PCregister                                  ;
+; Top-level Entity Name              ; FetchTB                                     ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
@@ -78,7 +80,8 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------------+
 ; Option                                                           ; Setting            ; Default Value            ;
 +------------------------------------------------------------------+--------------------+--------------------------+
-; Top-level entity name                                            ; PCregister         ; ArquitecturaHybridARMIPS ;
+; Device                                                           ; EP4CGX150DF31C7    ;                          ;
+; Top-level entity name                                            ; FetchTB            ; ArquitecturaHybridARMIPS ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V                ;
 ; Use smart compilation                                            ; Off                ; Off                      ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                       ;
@@ -158,13 +161,37 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------------+
 
 
++---------------------------------------------------------+
+; Port Connectivity Checks: "Fetch:fetch|Sumador:sumador" ;
++-----------------+-------+----------+--------------------+
+; Port            ; Type  ; Severity ; Details            ;
++-----------------+-------+----------+--------------------+
+; sumando2[31..1] ; Input ; Info     ; Stuck at GND       ;
+; sumando2[0]     ; Input ; Info     ; Stuck at VCC       ;
++-----------------+-------+----------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Fetch:fetch"                                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; PCsrc        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; PCalu[31..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; PCalu[2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; PCalu[1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; PCalu[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; inst         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 22 20:46:07 2018
+    Info: Processing started: Sun Sep 23 23:08:02 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -172,26 +199,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file memory.
     Info (12023): Found entity 1: Memory File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Memory.sv Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file arquitecturahybridarmips.sv
 Info (12021): Found 1 design units, including 1 entities, in source file fetch.sv
-    Info (12023): Found entity 1: Fetch File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 1
+    Info (12023): Found entity 1: Fetch File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file sumador.sv
     Info (12023): Found entity 1: Sumador File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sumadortb.sv
     Info (12023): Found entity 1: SumadorTB File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/SumadorTB.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pcregister.sv
-    Info (12023): Found entity 1: PCregister File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memorytb.sv
     Info (12023): Found entity 1: MemoryTB File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/MemoryTB.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fetchtb.sv
     Info (12023): Found entity 1: FetchTB File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pcregistertb.sv
-    Info (12023): Found entity 1: PCregisterTB File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregisterTB.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at Fetch.sv(15): created implicit net for "PCout" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at PCregisterTB.sv(6): created implicit net for "pc_in" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregisterTB.sv Line: 6
-Info (12127): Elaborating entity "PCregister" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory.sv
+    Info (12023): Found entity 1: InstructionMemory File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv Line: 1
+Info (12127): Elaborating entity "FetchTB" for the top level hierarchy
+Warning (10755): Verilog HDL warning at FetchTB.sv(6): assignments to clk create a combinational loop File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 6
+Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fetch" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv Line: 14
+Info (12128): Elaborating entity "Sumador" for hierarchy "Fetch:fetch|Sumador:sumador" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 17
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fetch|InstructionMemory:memoria_instrucciones" File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv Line: 18
+Warning (10858): Verilog HDL warning at InstructionMemory.sv(10): object mem used but never assigned File: D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv Line: 10
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4802 megabytes
-    Info: Processing ended: Sat Sep 22 20:46:24 2018
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Sun Sep 23 23:08:19 2018
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Total CPU time (on all processors): 00:00:39
 
 

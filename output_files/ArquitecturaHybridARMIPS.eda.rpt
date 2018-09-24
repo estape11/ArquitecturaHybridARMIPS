@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ArquitecturaHybridARMIPS
-Sat Sep 22 11:50:02 2018
+Sun Sep 23 22:40:53 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Sep 22 11:50:02 2018 ;
+; EDA Netlist Writer Status ; Successful - Sun Sep 23 22:40:53 2018 ;
 ; Revision Name             ; ArquitecturaHybridARMIPS              ;
-; Top-level Entity Name     ; Fetch                                 ;
+; Top-level Entity Name     ; Sumador                               ;
 ; Family                    ; Cyclone IV GX                         ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -71,12 +71,12 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------------------------------------+
 ; Generated Files                                                                                                    ;
 +--------------------------------------------------------------------------------------------------------------------+
-; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_6_1200mv_85c_slow.svo    ;
-; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_6_1200mv_0c_slow.svo     ;
+; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_7_1200mv_85c_slow.svo    ;
+; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_7_1200mv_0c_slow.svo     ;
 ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_min_1200mv_0c_fast.svo   ;
 ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS.svo                      ;
-; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_6_1200mv_85c_v_slow.sdo  ;
-; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_6_1200mv_0c_v_slow.sdo   ;
+; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_7_1200mv_85c_v_slow.sdo  ;
+; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_7_1200mv_0c_v_slow.sdo   ;
 ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_min_1200mv_0c_v_fast.sdo ;
 ; D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/ArquitecturaHybridARMIPS_v.sdo                    ;
 +--------------------------------------------------------------------------------------------------------------------+
@@ -88,20 +88,20 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 22 11:50:01 2018
+    Info: Processing started: Sun Sep 23 22:40:52 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ArquitecturaHybridARMIPS -c ArquitecturaHybridARMIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ArquitecturaHybridARMIPS_6_1200mv_85c_slow.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ArquitecturaHybridARMIPS_6_1200mv_0c_slow.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ArquitecturaHybridARMIPS_7_1200mv_85c_slow.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ArquitecturaHybridARMIPS_7_1200mv_0c_slow.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ArquitecturaHybridARMIPS_min_1200mv_0c_fast.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ArquitecturaHybridARMIPS.svo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ArquitecturaHybridARMIPS_6_1200mv_85c_v_slow.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ArquitecturaHybridARMIPS_6_1200mv_0c_v_slow.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ArquitecturaHybridARMIPS_7_1200mv_85c_v_slow.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ArquitecturaHybridARMIPS_7_1200mv_0c_v_slow.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ArquitecturaHybridARMIPS_min_1200mv_0c_v_fast.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ArquitecturaHybridARMIPS_v.sdo in folder "D:/ProyectosQuartus/ArquitecturaHybridARMIPS/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4733 megabytes
-    Info: Processing ended: Sat Sep 22 11:50:02 2018
+    Info: Peak virtual memory: 4741 megabytes
+    Info: Processing ended: Sun Sep 23 22:40:53 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

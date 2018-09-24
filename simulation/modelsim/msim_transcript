@@ -10,16 +10,85 @@
 # Copying C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv}
+# vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:46:40 on Sep 22,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS" D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv 
-# -- Compiling module PCregister
-# ** Error (suppressible): (vlog-7061) D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv(11): Variable 'pc_out' driven in an always_ff block, may not be driven by any other process. See D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv(7).
-# End time: 20:46:40 on Sep 22,2018, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./ArquitecturaHybridARMIPS_run_msim_rtl_verilog.do line 8
-# C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv}"
+# Start time: 23:08:36 on Sep 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS" D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv 
+# -- Compiling module Fetch
+# 
+# Top level modules:
+# 	Fetch
+# End time: 23:08:36 on Sep 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:08:36 on Sep 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS" D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv 
+# -- Compiling module Sumador
+# 
+# Top level modules:
+# 	Sumador
+# End time: 23:08:36 on Sep 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:08:37 on Sep 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS" D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv 
+# -- Compiling module FetchTB
+# 
+# Top level modules:
+# 	FetchTB
+# End time: 23:08:37 on Sep 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:08:37 on Sep 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS" D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 23:08:37 on Sep 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.FetchTB
+# vsim work.FetchTB 
+# Start time: 23:09:59 on Sep 23,2018
+# Loading sv_std.std
+# Loading work.FetchTB
+# Loading work.Fetch
+# Loading work.Sumador
+# Loading work.InstructionMemory
+mem load -filltype value -filldata {          0 } -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(0)
+mem load -filltype value -filldata 1 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(1)
+mem load -filltype value -filldata 2 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(2)
+mem load -filltype value -filldata 3 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(3)
+mem load -filltype value -filldata 4 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(4)
+mem load -filltype value -filldata 5 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(5)
+mem load -filltype value -filldata 6 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(6)
+mem load -filltype value -filldata 7 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(7)
+mem load -filltype value -filldata 8 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(8)
+mem load -filltype value -filldata 9 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(9)
+mem load -filltype value -filldata 10 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(10)
+mem load -filltype value -filldata 11 -fillradix decimal /FetchTB/fetch/memoria_instrucciones/mem(11)
+run -next
+run -next
+add wave -position end  sim:/FetchTB/inst
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: micha  Hostname: DESKTOP-SEK4V05  ProcessID: 18128
+#           Attempting to use alternate WLF file "./wlftvk1r1j".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvk1r1j
+add wave -position end  sim:/FetchTB/PCalu
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next
+run -next

@@ -5,5 +5,8 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/PCregister.sv}
+vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Fetch.sv}
+vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/Sumador.sv}
+vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/FetchTB.sv}
+vlog -sv -work work +incdir+D:/ProyectosQuartus/ArquitecturaHybridARMIPS {D:/ProyectosQuartus/ArquitecturaHybridARMIPS/InstructionMemory.sv}
 
