@@ -51,7 +51,38 @@ module nBitsShift	#(parameter N=32)
 	assign out = (sel == 1'b0) ? outDer : outIzq;
 endmodule
 
-// no se si agregar los carry
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+						ALU
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 24/09/2018
+	
+	Entradas:- 2 operandos de entrada
+				- Selector de operacion
+				- Parametro N bits
+				
+	Restricciones:
+				- Entradas son de N bits 
+				- Señal de control de 4 bits
+	
+   Salidas: - Resultado de la operacion de 
+				N bits
+				- Banderas de Zero, Negativo y
+				overflow
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+**/
 module ALU #(parameter N=32)
 				(input logic [N-1:0] a, b,
 				 input logic [3:0] sel,
@@ -65,16 +96,14 @@ module ALU #(parameter N=32)
 	assign nHI = {N{HI}};
 	assign selShift = (sel == 4'b11) ? HI : LO; // shift left o right
 	assign selB = (sel == 4'b1) ? b : outC2; // resta o suma
-	assign z = (result == nLO) ? 1 : 0;
 	assign n = result[N-1];
-	assign v = LO ^ cout; // verificar la bandera de overflow
+	assign z = (result == nLO) ? 1 : 0;
 	nBitsAND #(N) AND (a, b, outAND);
-	nBitsADD #(N) ADD (a, selB, LO, outADD, cout);
+	nBitsADD #(N) ADD (a, selB, LO, outADD, v, cout);
 	nBitsOR #(N) OR (a ,b,outOR);
 	nBitsC2 #(N) C2 (b, outC2);
 	nBitsShift #(N) SHIFT (a, b, selShift, outShift);
-	mux4 #(N) MUX (nLO, outADD, outADD, outShift, outShift, outAND, outOR, nHI, nHI, nHI, nHI, nHI, nHI, nHI, nHI, nHI,
+	mux4 #(N) MUX (nLO, outADD, outADD, outShift, outShift, outAND, outOR, b, a, nHI, nHI, nHI, nHI, nHI, nHI, nHI,
 						sel, result);
-	
 	
 endmodule

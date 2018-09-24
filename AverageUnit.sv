@@ -1,4 +1,32 @@
-// Recibe un pixel RGB y devuelve su promedio
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+				Calculador de Promedio
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 24/09/2018
+	
+	Entradas:- Pixel por operar
+				- Parametro N bits
+				
+	Restricciones:
+				- Pixel esta compuesto de RGB
+				cada uno de 8 bits (24 bits).
+	
+   Salidas: - Resultado calcular el promedio
+				del pixel de entrada
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+**/
 module AverageUnit #(parameter N=32)
 						  (input logic [N-1:0] pixel,
 							output logic [N-1:0] out);
