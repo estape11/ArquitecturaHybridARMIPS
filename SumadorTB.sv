@@ -1,8 +1,8 @@
 module SumadorTB();
 	
-	logic [7:0]sumando1;
-	logic [7:0]sumando2;
-	logic	[7:0]resultado;
+	logic [31:0]sumando1;
+	logic [31:0]sumando2;
+	logic	[31:0]resultado;
 	
 	Sumador DUT(sumando1, sumando2, resultado);
 	

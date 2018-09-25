@@ -4,7 +4,7 @@ module MemoryTB();
 	logic wr;
 	logic [31:0] address;
 	logic [31:0] data_in;
-	logic [63:0] data_out;
+	logic [31:0] data_out;
 	
    Memory DUT (clk, wr, address, data_in, data_out);
 		

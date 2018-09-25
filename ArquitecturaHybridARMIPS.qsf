@@ -50,7 +50,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ArquitecturaHybridARMIPS.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Fetch.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Sumador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE SumadorTB.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PCregister.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MemoryTB.sv
 set_global_assignment -name SYSTEMVERILOG_FILE FetchTB.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PCregisterTB.sv
@@ -68,6 +67,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE PAU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PAU_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ConditionalUnit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ConditionalUnit_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MemoryStage.sv
+set_global_assignment -name SYSTEMVERILOG_FILE InstructionMemory.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
