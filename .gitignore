@@ -1,1 +1,5 @@
-db/ArquitecturaHybridARMIPS.quiproj.11720.rdr.flock
+db/
+incremental_db/
+output_files/
+simulation/
+*.bak

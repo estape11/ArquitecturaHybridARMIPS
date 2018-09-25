@@ -30,9 +30,10 @@
 **/
 module Register #(parameter N=32)
 					  (input logic [N-1:0] in,
-						input logic clk,
-						output logic [N-1:0] out);
+						input logic clk, enable,
+						output logic [N-1:0] out={N{1'b0}});
 	always_ff @ (posedge clk) begin
-		out<=in;
+		if (enable) out<=in;
+		else out<=out;
 	end	
 endmodule 
