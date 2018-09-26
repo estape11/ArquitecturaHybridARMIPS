@@ -42,6 +42,8 @@ module Execute(input logic MemPWrite, RegWrite, MemWrite, BranchInst, ALUSrc, Fl
 	assign MemToRegOut = MemToReg;
 	assign MemWriteOut = MemWrite;
 	assign IOFlagOut = IOFlag;
+	assign RdOut = Rd;
+	assign WriteData = Rb;
 	ConditionalUnit UniCondicion (z, v, n, FlagWrite, BranchInst, clk, CondFlag, PCSrc);
 	ALU #(32) ALUnit (Ra, RbMux, ALUControl, z, n, v, ALUOut);
 	PAU #(32) PAUnit (Ra, Rb,PAUOp, APUout);
