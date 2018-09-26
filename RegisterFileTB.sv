@@ -1,4 +1,4 @@
-module BancoRegistrosTB();
+module RegisterFileTB();
 
 		logic[31:0] dato;
 		logic[3:0] addr1;
@@ -10,7 +10,7 @@ module BancoRegistrosTB();
 		logic clk;
 		logic enable;
 
-		BancoRegistros DUT (clk,enable,addr1,addr2,addr3,dato,pc,datosalida1,datosalida2);
+		RegisterFile DUT (clk,enable,addr1,addr2,addr3,dato,pc,datosalida1,datosalida2);
 		
 		initial begin
 		   clk = 1; 
