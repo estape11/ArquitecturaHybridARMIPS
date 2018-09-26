@@ -76,5 +76,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE ConditionalUnit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ConditionalUnit_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MemoryStage.sv
 set_global_assignment -name SYSTEMVERILOG_FILE InstructionMemory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Test_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Execute.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PixelsMemory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PixelsMemoryTB.sv
