@@ -1,13 +1,39 @@
-module Memory (input clk,
-					input wr,
-					input [31:0] address,
-					input [31:0] data_in,
-					output logic [31:0] data_out);
-	//2^32 = 4 294 967 296
-	//(2^32)/4 = 1073741824
-	//2^28 = 268 435 456
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+						Memory
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 26/09/2018
 	
-	logic [31:0] mem [100];
+	Entradas:- 4 operandos de entrada
+				- clock
+				- Dirección de almacenamiento/lectura del dato
+				- Dato a escribir
+				- Dato leido
+				
+	Restricciones:
+				- Entradas son de N bits 
+	
+   Salidas: - Dato leido
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+*/
+module Memory #(parameter N = 32)
+					(input  logic clk, wr,
+					 input  logic [N-1:0] address, data_in,
+					 output logic [N-1:0] data_out);
+
+	logic [N-1:0] mem [100];
 	
 	always_ff @(negedge clk) begin
 		if (wr == 1)
@@ -18,4 +44,5 @@ module Memory (input clk,
 		if (wr == 0)
 			data_out <= mem[address];
 	end
+	
 endmodule
