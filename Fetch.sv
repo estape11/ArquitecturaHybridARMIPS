@@ -31,7 +31,7 @@ module Fetch #(parameter N = 32)
               (input  logic clk, PCsrc,
 		  		   input  logic [N-1:0] PCalu,
 				   output logic [N-1:0] inst,
-					output logic [N-1:0] PCout)
+					output logic [N-1:0] PCout);
 					
 	logic [N-1:0] PCin, PCplus1;
 	
