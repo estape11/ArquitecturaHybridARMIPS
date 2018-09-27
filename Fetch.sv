@@ -27,17 +27,16 @@
 **********************************************************************
 */
 module Fetch #(parameter N = 32)
-              (input  clk, PCsrc,
-					input  [N-1:0] PCalu,
-					output [N-1:0] inst);
+              (input  logic clk, PCsrc,
+		  		   input  logic [N-1:0] PCalu,
+				   output logic [N-1:0] inst);
+					
+	logic [N-1:0] PCin, PCout, PCplus1;
 	
-	logic [N-1:0] pc = 0;
-	logic [N-1:0] PCsumador;
+	Register #(N) PC (PCin, ~clk, 1'b1, PCout);
+	nBitsADD #(N) Sumador (PCout, 32'b1, 1'b0, PCplus1);
+	InstructionMemory #(N) memoria_instrucciones(PCout, inst);
 	
-	Sumador sumador(pc, 1, PCsumador);
-	InstructionMemory memoria_instrucciones(pc, inst);
-	
-	always_ff @(posedge clk)
-		pc = PCsrc ? PCalu : PCsumador;
-	
+	assign PCin = (PCsrc)? PCalu : PCplus1;
+
 endmodule
