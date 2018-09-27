@@ -8,10 +8,9 @@ module FetchTB();
 	end
 	
 	logic PCsrc;
-	logic [31:0] PCalu;
-	logic [31:0] inst;
+	logic [31:0] PCalu, inst, PCout;
 	
-	Fetch fetch(clk, PCsrc, PCalu, inst);
+	Fetch fetch(clk, PCsrc, PCalu, inst, PCout);
 	
 	/*
 		1. Llenar 5 instrucciones

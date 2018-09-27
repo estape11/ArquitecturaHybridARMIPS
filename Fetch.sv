@@ -21,6 +21,7 @@
 				- Entradas son de N bits 
 	
    Salidas: - instrucción leida
+				- PC actual
             
 		Arquitectura de Computadores I 2018
 				Prof. Ronald Garcia
@@ -29,9 +30,10 @@
 module Fetch #(parameter N = 32)
               (input  logic clk, PCsrc,
 		  		   input  logic [N-1:0] PCalu,
-				   output logic [N-1:0] inst);
+				   output logic [N-1:0] inst,
+					output logic [N-1:0] PCout)
 					
-	logic [N-1:0] PCin, PCout, PCplus1;
+	logic [N-1:0] PCin, PCplus1;
 	
 	Register #(N) PC (PCin, ~clk, 1'b1, PCout);
 	nBitsADD #(N) Sumador (PCout, 32'b1, 1'b0, PCplus1);
