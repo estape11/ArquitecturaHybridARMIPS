@@ -1,3 +1,29 @@
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+					Unidad de Control
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 27/09/2018
+	
+	Entradas:- Cabecera de instruccion
+				
+	Restricciones:
+				- La cabecera debe ser de 10 bits
+	
+   Salidas: - Señales de control
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+**/
 module ControlUnit(input logic [9:0] InstHeader,
 						 output logic RnSrc, ImmSrc, RsSrc, ResultSrc, IOFlag, PAUOp, ImmExt, FlagWrite, ALUSrc, BranchInst, MemWrite, RegWrite, MemPWrite,
 						 output logic [3:0] ALUControl,

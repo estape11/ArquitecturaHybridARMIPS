@@ -31,10 +31,12 @@ module Execute(input logic MemPWrite, RegWrite, MemWrite, BranchInst, ALUSrc, Fl
 					input logic [1:0] MemToReg,
 					input logic [3:0] ALUControl,
 					input logic [2:0] CondFlag,
-					input logic [31:0] Ra, Rb, Rd, ExtIm,
+					input logic [31:0] Ra, Rb, ExtIm,
+					input logic [3:0] Rd,
 					output logic PCSrc, RegWriteOut, MemWriteOut, MemPWriteOut, IOFlagOut,
 					output logic [1:0] MemToRegOut,
-					output logic [31:0] ALUResult, WriteData, RdOut);
+					output logic [31:0] ALUResult, WriteData, 
+					output logic [3:0] RdOut);
 	logic z, v, n;
 	logic [31:0] ALUOut, APUout, RbMux;
 	assign MemPWriteOut = MemPWrite;

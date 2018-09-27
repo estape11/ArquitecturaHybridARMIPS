@@ -4,7 +4,8 @@ module Execute_tb();
 	logic [1:0] MemToReg, MemToRegOut;
 	logic [2:0] CondFlag;
 	logic [3:0] ALUControl;
-	logic [31:0] Ra, Rb, Rd, ExtIm, ALUResult, WriteData, RdOut;
+	logic [31:0] Ra, Rb, ExtIm, ALUResult, WriteData;
+	logic [3:0] Rd, RdOut;
 	
 	Execute DUT (MemPWrite, RegWrite, MemWrite, BranchInst, ALUSrc, FlagWrite, PAUOp, IOFlag, ResultSrc, clk,
 					MemToReg, ALUControl, CondFlag, Ra, Rb, Rd, ExtIm, PCSrc, RegWriteOut, MemWriteOut, MemPWriteOut,
@@ -26,7 +27,7 @@ module Execute_tb();
 		CondFlag=3'b0;
 		Ra=32'b1010;
 		Rb=32'b1011;
-		Rd=32'b11110000;
+		Rd=4'b1010;
 		ExtIm=32'b1010101;
 		#2;
 	end

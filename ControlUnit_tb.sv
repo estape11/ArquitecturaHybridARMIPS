@@ -5,7 +5,7 @@ module ControlUnit_tb();
 	logic [2:0] CondFlag;
 	logic [1:0] MemToReg;
 	
-	UnitControl DUT (InstHeader,
+	ControlUnit DUT (InstHeader,
 						 RnSrc, ImmSrc, RsSrc, ResultSrc, IOFlag, PAUOp, ImmExt, FlagWrite, ALUSrc, BranchInst, MemWrite, RegWrite, MemPWrite,
 						 ALUControl,
 						 CondFlag,
