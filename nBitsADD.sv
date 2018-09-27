@@ -39,7 +39,7 @@ endmodule
 module nBitsADD #(parameter N=32)
 					  (input logic [N-1:0] a,b,
 					   input logic cin,
-					   output logic [N-1:0] out,
+					   output logic [N-1:0] out = 32'b0,
 					   output logic overflow,cout);
 	logic [N-1:0] carry; // para conectar los acarreos entre los comp. generados
    genvar i;
