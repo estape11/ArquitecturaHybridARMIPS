@@ -34,11 +34,14 @@
 *********************************************************************
 */
 module MemoryStage #(parameter N = 32) 
-						  (input  logic clk, MEMWrite, MemPWrite,
-							input  logic [N-1:0] address, WriteData,
-							input  logic [3:0]   RdIn,
+						  (input logic clk, MEMWrite, MemPWrite, PCSrc, RegWrite, IOFlag,
+							input logic [1:0] MemToReg,
+							input logic [N-1:0] address, WriteData,
+							input logic [3:0] RdIn,
 							output logic [N-1:0] ReadDataDataMem, ReadDataPixMem, ALUresultOut,
-							output logic [3:0]   RdOut);
+							output logic [3:0]  RdOut,
+							output logic PCSrcOut, RegWriteOut, IOFlagOut,
+							output logic [1:0] MemToRegOut);
 	
 	Memory data_memory(clk, MEMWrite, address, WriteData, ReadDataDataMem);
 	
@@ -46,5 +49,9 @@ module MemoryStage #(parameter N = 32)
 	
 	assign ALUresultOut = address;
 	assign RdOut = RdIn;
+	assign PCSrcOut = PCSrc;
+	assign RegWriteOut = RegWrite;
+	assign IOFlagOut = IOFlag;
+	assign MemToRegOut = MemToReg;
 	
 endmodule
