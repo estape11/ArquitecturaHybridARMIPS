@@ -1,3 +1,33 @@
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+					Etapa WriteBack
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 26/09/2018
+	
+	Entradas:- Señales de control
+				- Entrada IO
+				- Dato a guardar 
+				- Direccion de Rd
+				
+	Restricciones:
+				- Verificar las señales de control
+	
+   Salidas: - Señales de control
+				- Resultado de la exe
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+**/
 module WriteBack(input logic PCSrc, RegWrite, IOFlag,
 					  input logic [1:0] MemToReg,
 					  input logic [31:0] IOIn, ReadData, ReadDataP, ALUOut, Rd,
