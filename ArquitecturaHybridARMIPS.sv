@@ -1,3 +1,31 @@
+/**
+***********************************************
+		Instituto Tecnologico de Costa Rica 
+			Ingenieria en Electronica
+
+					HybridARMIPS
+       
+		Autores: Esteban Aguero Perez
+					Michael Gonzalez Rivera
+					Daniela Hernandez Alvarado
+					
+			Lenguaje: SystemVerilog
+					Version: 1.0         
+		Ultima Modificacion: 27/09/2018
+	
+	Entradas:- Clk
+				- reset
+				- halt
+				
+	Restricciones:
+				-
+	
+   Salidas: - Ejecucion de las instrucciones
+            
+		Arquitectura de Computadores I 2018
+				Prof. Ronald Garcia
+***********************************************
+**/
 module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para detener la ejecucion
 	logic enable;
 	logic [31:0] outFE, inDE, PC, DataWrite, PCalu, IOIn;
@@ -11,6 +39,7 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 	Fetch #(32) IF (clk, PCSrc,
 		  		   PCalu,
 				   outFE, PC);
+					
 	Decode #(32) DE (inDE, PC, DataWrite,
 					 Rd,
 					 clk, RegWrite,
@@ -21,6 +50,7 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 					 outDE[112:109], // ALUControl
 					 outDE[115:113], // CondFlag
 					 outDE[117:116]); // MemToReg
+
 	Execute #(32) EXE (inEXE[100], inEXE[101], inEXE[102], inEXE[103], inEXE[104], // MemPWrite, RegWrite, MemWrite, BranchInst, ALUSrc 
 					  inEXE[105], inEXE[106], inEXE[107], inEXE[108], // FlagWrite, PAUOp, IOFlag, ResultSrc
 					  clk,
@@ -33,15 +63,17 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 					  outEXE[69:68], // MemToRegOut
 					  outEXE[31:0], outEXE[63:32], // ALUResult, WriteData
 					  outEXE[67:64]); // RdOut);
+					  
 	MemoryStage #(32) MEM (clk,
 							inMEM[72], inMEM[73], inMEM[70], inMEM[71], inMEM[74], // MEMWrite, MemPWrite, PCSrc, RegWrite, IOFlag
 							inMEM[69:68], // MemToReg
 							inMEM[31:0], inMEM[63:32], // address, WriteData
 							inMEM[67:64], // RdIn,
-							outMEM[95:64], outMEM[63:32], outMEM[31:0], // ReadDataDataMem, ReadDataPixMem, ALUresultOut
+							outMEM[31:0], outMEM[63:32], outMEM[95:64], // ReadDataDataMem, ReadDataPixMem, ALUresultOut
 							outMEM[99:96], // RdOut
 							outMEM[102], outMEM[103], outMEM[104], // PCSrcOut, RegWriteOut, IOFlagOut
 							outMEM[101:100]); // MemToRegOut 
+							
 	WriteBack #(32) WB (inWB[102], inWB[103], inWB[104], // PCSrc, RegWrite, IOFlag
 						 inWB[101:100], // MemToReg
 						 IOIn, inWB[31:0], inWB[63:32], inWB[95:64], // IOIn, ReadData, ReadDataP, ALUOut,
@@ -49,8 +81,9 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 						 DataWrite, 
 						 Rd,
 						 PCSrc, RegWrite);
-	Register #(32) IF_DE (outFE, clk, enable, inDE);
-	Register #(118) DE_EXE (outDE, clk, enable, inEXE);
-	Register #(75) EXE_MEM (outEXE, clk, enable, inMEM);
-	Register #(105) MEM_WB (outMEM, clk, enable, inWB);
+						 
+	Register #(32) IF_DE (outFE, ~clk, enable, inDE);
+	Register #(118) DE_EXE (outDE, ~clk, enable, inEXE);
+	Register #(75) EXE_MEM (outEXE, ~clk, enable, inMEM);
+	Register #(105) MEM_WB (outMEM, ~clk, enable, inWB);
 endmodule 
