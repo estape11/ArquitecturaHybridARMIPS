@@ -37,7 +37,7 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 	assign enable = ~halt & 1'b1;
 	assign IOIn = 32'b0;
 	Fetch #(32) IF (clk, PCSrc,
-		  		   PCalu,
+		  		   DataWrite,
 				   outFE, PC);
 					
 	Decode #(32) DE (inDE, PC, DataWrite,

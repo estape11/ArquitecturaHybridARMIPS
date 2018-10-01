@@ -32,6 +32,9 @@ module ConditionalUnit_tb();
 		n=1'b1;
 		#2
 		enable1=1'b0;
+		#3
+		cond=3'b111;
+		enable2=1'b1;
 	end
 	
 	always begin

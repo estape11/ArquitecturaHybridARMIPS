@@ -316,15 +316,15 @@ module ControlUnit(input logic [9:0] InstHeader,
 			RsSrc<=1'b0;
 			PAUOp<=1'b0;
 			FlagWrite<=1'b0;
-			ALUSrc<=1'b0;
+			ALUSrc<=1'b1;
 			BranchInst<=1'b1;
-			ALUControl<=4'b0;
+			ALUControl<=4'b111;
 			CondFlag<=InstHeader[9:7];
 			ResultSrc<=1'b0;
 			MemWrite<=1'b0;
 			MemPWrite<=1'b0;
 			IOFlag<=1'b0;
-			MemToReg<=2'b0;
+			MemToReg<=2'b1;
 		end
 		else begin
 			RnSrc<=1'b0;
