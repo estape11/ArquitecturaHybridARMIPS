@@ -34,7 +34,7 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para dete
 	logic [117:0] outDE, inEXE;
 	logic [74:0] outEXE, inMEM;
 	logic [104:0] outMEM, inWB;
-	assign enable = 1'b1;
+	assign enable = ~halt & 1'b1;
 	assign IOIn = 32'b0;
 	Fetch #(32) IF (clk, PCSrc,
 		  		   PCalu,
