@@ -271,6 +271,42 @@ module ControlUnit(input logic [9:0] InstHeader,
 				IOFlag<=1'b0;
 				MemToReg<=2'b0;
 			end
+			else if (InstHeader[4:3] == 2'b1) begin // LPX
+				RnSrc<=1'b0;
+				ImmSrc<=1'b0;
+				ImmExt<=1'b0;
+				RegWrite<=1'b0;
+				RsSrc<=1'b0;
+				PAUOp<=1'b0;
+				FlagWrite<=1'b0;
+				ALUSrc<=1'b0;
+				BranchInst<=1'b0;
+				ALUControl<=4'b0;
+				CondFlag<=3'b0;
+				ResultSrc<=1'b0;
+				MemWrite<=1'b0;
+				MemPWrite<=1'b0;
+				IOFlag<=1'b0;
+				MemToReg<=2'b0;
+			end
+			else if (InstHeader[4:3] == 2'b10) begin // SPX
+				RnSrc<=1'b0;
+				ImmSrc<=1'b0;
+				ImmExt<=1'b0;
+				RegWrite<=1'b0;
+				RsSrc<=1'b0;
+				PAUOp<=1'b0;
+				FlagWrite<=1'b0;
+				ALUSrc<=1'b0;
+				BranchInst<=1'b0;
+				ALUControl<=4'b0;
+				CondFlag<=3'b0;
+				ResultSrc<=1'b0;
+				MemWrite<=1'b0;
+				MemPWrite<=1'b0;
+				IOFlag<=1'b0;
+				MemToReg<=2'b0;
+			end
 			else if (InstHeader[4:3] == 2'b11) begin // LDR
 				RnSrc<=1'b0;
 				ImmSrc<=1'b0;
@@ -308,7 +344,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 				MemToReg<=2'b0;
 			end
 		end
-		else if (InstHeader[6:5] == 2'b10) begin // inst de branch
+		else if (InstHeader[6:5] == 2'b10) begin // Inst de branch
 			RnSrc<=1'b0;
 			ImmSrc<=1'b1;
 			ImmExt<=1'b0;
@@ -326,7 +362,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 			IOFlag<=1'b0;
 			MemToReg<=2'b1;
 		end
-		else begin
+		else begin // NOP
 			RnSrc<=1'b0;
 			ImmSrc<=1'b0;
 			ImmExt<=1'b0;

@@ -26,9 +26,10 @@
 				Prof. Ronald Garcia
 ***********************************************
 **/
-module ArquitecturaHybridARMIPS(input logic clk, reset, halt); // halt para detener la ejecucion
+module ArquitecturaHybridARMIPS(input logic clk, reset, halt, // halt para detener la ejecucion
+										  output logic [31:0] outFE); // es la instruccion entrante al pipeline
 	logic enable;
-	logic [31:0] outFE, inDE, PC, DataWrite, PCalu, IOIn;
+	logic [31:0] inDE, PC, DataWrite, PCalu, IOIn;
 	logic [3:0] Rd;
 	logic PCSrc, RegWrite;
 	logic [117:0] outDE, inEXE;

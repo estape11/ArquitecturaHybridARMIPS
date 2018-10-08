@@ -97,7 +97,7 @@ module ALU #(parameter N=32)
 	assign selShift = (sel == 4'b11) ? HI : LO; // shift left o right
 	assign selB = (sel == 4'b1) ? b : outC2; // resta o suma
 	assign n = result[N-1];
-	assign z = (result == nLO) ? 1 : 0;
+	assign z = (result == nLO) ? 1'b1 : 1'b0;
 	nBitsAND #(N) AND (a, b, outAND);
 	nBitsADD #(N) ADD (a, selB, LO, outADD, v, cout);
 	nBitsOR #(N) OR (a ,b,outOR);
