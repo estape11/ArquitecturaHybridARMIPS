@@ -22,6 +22,8 @@ module ALU_tb();
 		b=8'd100;
 		sel=4'b10;  // SUB
 		#1
+		a=8'b11111111;
+		b=8'b10;		
 		sel=4'b11; // SHIFT LEFT
 		#1
 		sel=4'b100; // SHIFT RIGHT

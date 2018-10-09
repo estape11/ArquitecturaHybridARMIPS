@@ -45,9 +45,9 @@ module nBitsShift	#(parameter N=32)
 						  input logic [N-1:0]shamt,
 						  input logic sel, //0 der, 1 izq
 						  output logic [N-1:0] out);
-	logic outIzq, outDer;
-	assign outDer = a>>shamt;		
-	assign outIzq = a<<shamt;
+	logic [N-1:0] outIzq, outDer;
+	assign outDer = a<<shamt;		
+	assign outIzq = a>>shamt;
 	assign out = (sel == 1'b0) ? outDer : outIzq;
 endmodule
 

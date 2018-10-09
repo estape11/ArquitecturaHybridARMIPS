@@ -31,7 +31,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 						 output logic [1:0] MemToReg);
 	always_comb begin
 		if (InstHeader[6:5] == 2'b0) begin // Inst de datos
-			if (InstHeader[4]) begin // si es con inmediato
+			if (InstHeader[4]) begin // con inmediato
 				if(InstHeader[3:0] == 4'b1) begin // SUB
 					RnSrc<=1'b0;
 					ImmSrc<=1'b0;
@@ -61,14 +61,14 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b1;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
 					IOFlag<=1'b0;
 					MemToReg<=2'b1;
 				end
-				else if(InstHeader[3:0] == 4'b0011) begin// MOV
+				else if(InstHeader[3:0] == 4'b11) begin// MOV
 					RnSrc<=1'b0;
 					ImmSrc<=1'b0;
 					ImmExt<=1'b1;
@@ -86,7 +86,25 @@ module ControlUnit(input logic [9:0] InstHeader,
 					IOFlag<=1'b0;
 					MemToReg<=2'b01;
 				end
-				else if(InstHeader[3:0] == 4'b0111) begin// CMP
+				else if(InstHeader[3:0] == 4'b110) begin// ORR
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b1;
+					BranchInst<=1'b0;
+					ALUControl<=4'b110;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
+				end
+				else if(InstHeader[3:0] == 4'b111) begin// CMP
 					RnSrc<=1'b1;
 					ImmSrc<=1'b0;
 					ImmExt<=1'b1;
@@ -103,6 +121,42 @@ module ControlUnit(input logic [9:0] InstHeader,
 					MemPWrite<=1'b0;
 					IOFlag<=1'b0;
 					MemToReg<=2'b01;
+				end
+				else if(InstHeader[3:0] == 4'b1000) begin// LSL
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b1;
+					BranchInst<=1'b0;
+					ALUControl<=4'b11;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
+				end
+				else if(InstHeader[3:0] == 4'b1001) begin// LSR
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b1;
+					BranchInst<=1'b0;
+					ALUControl<=4'b100;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
 				end
 				else begin// NOP por defecto
 					RnSrc<=1'b0;
@@ -160,6 +214,42 @@ module ControlUnit(input logic [9:0] InstHeader,
 					IOFlag<=1'b0;
 					MemToReg<=2'b1;
 				end
+				else if (InstHeader[3:0] == 4'b11) begin // MOV
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b1;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b0;
+					BranchInst<=1'b0;
+					ALUControl<=4'b1000;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b01;
+				end
+				else if (InstHeader[3:0] == 4'b110) begin // ORR
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b0;
+					BranchInst<=1'b0;
+					ALUControl<=4'b110;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
+				end
 				else if (InstHeader[3:0] == 4'b111) begin // CMP
 					RnSrc<=1'b0;
 					ImmSrc<=1'b0;
@@ -177,6 +267,42 @@ module ControlUnit(input logic [9:0] InstHeader,
 					MemPWrite<=1'b0;
 					IOFlag<=1'b0;
 					MemToReg<=2'b0;
+				end
+				else if (InstHeader[3:0] == 4'b1000) begin // LSL
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b0;
+					BranchInst<=1'b0;
+					ALUControl<=4'b11;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
+				end
+				else if (InstHeader[3:0] == 4'b1001) begin // LSR
+					RnSrc<=1'b0;
+					ImmSrc<=1'b0;
+					ImmExt<=1'b0;
+					RegWrite<=1'b1;
+					RsSrc<=1'b0;
+					PAUOp<=1'b0;
+					FlagWrite<=1'b0;
+					ALUSrc<=1'b0;
+					BranchInst<=1'b0;
+					ALUControl<=4'b100;
+					CondFlag<=3'b0;
+					ResultSrc<=1'b0;
+					MemWrite<=1'b0;
+					MemPWrite<=1'b0;
+					IOFlag<=1'b0;
+					MemToReg<=2'b1;
 				end
 				else if (InstHeader[3:0] == 4'b1010) begin // AVR
 					RnSrc<=1'b0;
@@ -213,24 +339,6 @@ module ControlUnit(input logic [9:0] InstHeader,
 					MemPWrite<=1'b0;
 					IOFlag<=1'b0;
 					MemToReg<=2'b1;
-				end
-				else if (InstHeader[3:0] == 4'b0011) begin // move
-					RnSrc<=1'b0;
-					ImmSrc<=1'b0;
-					ImmExt<=1'b0;
-					RegWrite<=1'b1;
-					RsSrc<=1'b1;
-					PAUOp<=1'b0;
-					FlagWrite<=1'b0;
-					ALUSrc<=1'b0;
-					BranchInst<=1'b0;
-					ALUControl<=4'b1000;
-					CondFlag<=3'b0;
-					ResultSrc<=1'b0;
-					MemWrite<=1'b0;
-					MemPWrite<=1'b0;
-					IOFlag<=1'b0;
-					MemToReg<=2'b01;
 				end
 				else begin // NOP por defecto
 					RnSrc<=1'b0;
@@ -275,37 +383,37 @@ module ControlUnit(input logic [9:0] InstHeader,
 				RnSrc<=1'b0;
 				ImmSrc<=1'b0;
 				ImmExt<=1'b0;
-				RegWrite<=1'b0;
-				RsSrc<=1'b0;
+				RegWrite<=1'b1;
+				RsSrc<=1'b1;
 				PAUOp<=1'b0;
 				FlagWrite<=1'b0;
 				ALUSrc<=1'b0;
 				BranchInst<=1'b0;
-				ALUControl<=4'b0;
+				ALUControl<=4'b1000;
 				CondFlag<=3'b0;
 				ResultSrc<=1'b0;
 				MemWrite<=1'b0;
 				MemPWrite<=1'b0;
 				IOFlag<=1'b0;
-				MemToReg<=2'b0;
+				MemToReg<=2'b10;
 			end
 			else if (InstHeader[4:3] == 2'b10) begin // SPX
 				RnSrc<=1'b0;
 				ImmSrc<=1'b0;
 				ImmExt<=1'b0;
 				RegWrite<=1'b0;
-				RsSrc<=1'b0;
+				RsSrc<=1'b1;
 				PAUOp<=1'b0;
 				FlagWrite<=1'b0;
 				ALUSrc<=1'b0;
 				BranchInst<=1'b0;
-				ALUControl<=4'b0;
+				ALUControl<=4'b1000;
 				CondFlag<=3'b0;
 				ResultSrc<=1'b0;
 				MemWrite<=1'b0;
-				MemPWrite<=1'b0;
+				MemPWrite<=1'b1;
 				IOFlag<=1'b0;
-				MemToReg<=2'b0;
+				MemToReg<=2'b1;
 			end
 			else if (InstHeader[4:3] == 2'b11) begin // LDR
 				RnSrc<=1'b0;
