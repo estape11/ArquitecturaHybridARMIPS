@@ -1,6 +1,7 @@
 module ArquitecturaHybridARMIPS_tb();
 	logic clk, halt, reset;
-	ArquitecturaHybridARMIPS DUT (clk, reset, halt);
+	logic [31:0] inst;
+	ArquitecturaHybridARMIPS DUT (clk, reset, halt, inst);
 	initial begin
 		halt=1'b0;
 		reset=1'b0;

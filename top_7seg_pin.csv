@@ -1,0 +1,78 @@
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+
+# Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+# File: C:\Users\estape11\Documents\Proyecto_1_Arquitectura_I\ArquitecturaHybridARMIPS\top_7seg_pin.csv
+# Generated on: Wed Oct 10 04:20:32 2018
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+inst7[6],Output,PIN_E10,8,B8_N2,,,,,,
+inst7[5],Output,PIN_F8,8,B8_N2,,,,,,
+inst7[4],Output,PIN_F9,8,B8_N2,,,,,,
+inst7[3],Output,PIN_C10,8,B8_N0,,,,,,
+inst7[2],Output,PIN_C11,8,B8_N1,,,,,,
+inst7[1],Output,PIN_C12,8,B8_N1,,,,,,
+inst7[0],Output,PIN_D12,8,B8_N1,,,,,,
+inst6[6],Output,PIN_B9,8,B8_N1,,,,,,
+inst6[5],Output,PIN_B10,8,B8_N0,,,,,,
+inst6[4],Output,PIN_C8,8,B8_N2,,,,,,
+inst6[3],Output,PIN_C9,8,B8_N2,,,,,,
+inst6[2],Output,PIN_D8,8,B8_N2,,,,,,
+inst6[1],Output,PIN_D9,8,B8_N2,,,,,,
+inst6[0],Output,PIN_E9,8,B8_N2,,,,,,
+inst5[6],Output,PIN_D3,8,B8_N2,,,,,,
+inst5[5],Output,PIN_A10,8,B8_N0,,,,,,
+inst5[4],Output,PIN_A9,8,B8_N1,,,,,,
+inst5[3],Output,PIN_A7,8,B8_N1,,,,,,
+inst5[2],Output,PIN_A6,8,B8_N1,,,,,,
+inst5[1],Output,PIN_A11,8,B8_N0,,,,,,
+inst5[0],Output,PIN_B6,8,B8_N1,,,,,,
+inst4[6],Output,PIN_A14,8,B8_N0,,,,,,
+inst4[5],Output,PIN_A13,8,B8_N0,,,,,,
+inst4[4],Output,PIN_C7,8,B8_N2,,,,,,
+inst4[3],Output,PIN_C6,8,B8_N1,,,,,,
+inst4[2],Output,PIN_C5,8,B8_N1,,,,,,
+inst4[1],Output,PIN_C4,8,B8_N1,,,,,,
+inst4[0],Output,PIN_C3,8,B8_N2,,,,,,
+inst3[6],Output,PIN_D10,8,B8_N2,,,,,,
+inst3[5],Output,PIN_D7,8,B8_N1,,,,,,
+inst3[4],Output,PIN_E6,8,B8_N2,,,,,,
+inst3[3],Output,PIN_E4,8,B8_N2,,,,,,
+inst3[2],Output,PIN_E3,8,B8_N2,,,,,,
+inst3[1],Output,PIN_D5,8,B8_N2,,,,,,
+inst3[0],Output,PIN_D4,8,B8_N1,,,,,,
+inst2[6],Output,PIN_G8,8,B8_N2,,,,,,
+inst2[5],Output,PIN_G7,8,B8_N2,,,,,,
+inst2[4],Output,PIN_F7,8,B8_N2,,,,,,
+inst2[3],Output,PIN_AG30,5,B5_N2,,,,,,
+inst2[2],Output,PIN_F6,8,B8_N2,,,,,,
+inst2[1],Output,PIN_F4,8,B8_N2,,,,,,
+inst2[0],Output,PIN_F10,8,B8_N2,,,,,,
+inst1[6],Output,PIN_G14,8,B8_N0,,,,,,
+inst1[5],Output,PIN_B13,8,B8_N0,,,,,,
+inst1[4],Output,PIN_G13,8,B8_N0,,,,,,
+inst1[3],Output,PIN_F12,8,B8_N1,,,,,,
+inst1[2],Output,PIN_G12,8,B8_N1,,,,,,
+inst1[1],Output,PIN_J9,8,B8_N2,,,,,,
+inst1[0],Output,PIN_G10,8,B8_N2,,,,,,
+inst0[6],Output,PIN_E15,8,B8_N0,,,,,,
+inst0[5],Output,PIN_E12,8,B8_N1,,,,,,
+inst0[4],Output,PIN_G11,8,B8_N1,,,,,,
+inst0[3],Output,PIN_F11,8,B8_N1,,,,,,
+inst0[2],Output,PIN_F16,8,B8_N0,,,,,,
+inst0[1],Output,PIN_D16,8,B8_N0,,,,,,
+inst0[0],Output,PIN_F14,8,B8_N0,,,,,,
+clk,Input,PIN_AA26,5,B5_N2,,,,,,

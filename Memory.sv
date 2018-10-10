@@ -28,13 +28,15 @@
 				Prof. Ronald Garcia
 ***********************************************
 */
-module Memory #(parameter N = 32)
+module Memory #(parameter N = 32, M=94500)
 					(input  logic clk, wr,
 					 input  logic [N-1:0] address, data_in,
 					 output logic [N-1:0] data_out);
 
-	logic [N-1:0] mem [100];
-	
+	logic [N-1:0] mem [M];
+	initial begin
+		$readmemb("ram.mem", mem); // cambiar ruta de cada uno
+	end
 	always_ff @(negedge clk) begin
 		if (wr == 1)
 			mem[address] <= data_in;	
