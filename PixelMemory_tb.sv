@@ -7,7 +7,7 @@ module PixelMemory_tb();
 					 data_out);
 	initial begin
 		clk=1'b1;
-		address = 32'b1010000000000000111;
+		address = 32'hEF013F; // mem (j=239,i=319)
 		enable=0;
 	end
 	always begin

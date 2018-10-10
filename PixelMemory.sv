@@ -1,18 +1,22 @@
-module PixelMemory #(parameter N = 32)
-					(input  logic clk, enable,
+module PixelMemory #(parameter N = 32, I = 640, J = 240)
+					(input  logic clk, enable, // activa la escritura
 					 input  logic [N-1:0] address, data_in,
 					 output logic [N-1:0] data_out);
 
-	logic [320:0] mem [240];
-	logic [15:0] i, j;
+	logic [I-1:0] mem [J];
+	logic [N/2:0] i, j, ix2,ix2p1; // ix2 y ix2+1
 	assign i = address[N/2-1:0];
 	assign j = address[N-1:N/2];
-	
+	assign ix2=i<<2'b1;
+	assign ix2p1 =ix2+1'b1;
+	initial begin
+		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/pix.mem", mem); // cambiar ruta de cada uno
+	end
 	always_ff @(negedge clk) begin
 		if (enable) mem[j][i]<= data_in;	
 	end
 	
 	always_ff @(posedge clk) begin
-		if (~enable) data_out <= mem[j][i];
+		if (~enable) data_out <= {mem[j][ix2p1],mem[j][ix2]};
 	end
 endmodule 

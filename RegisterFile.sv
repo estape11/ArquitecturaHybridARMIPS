@@ -39,7 +39,11 @@ module RegisterFile #(parameter N=4, M=32)
 			input logic [M-1:0] R15,
 			output logic [M-1:0] RD1,
 			output logic [M-1:0] RD2);
-logic [31:0]rf[14:0];
+logic [31:0]rf[16]; // [14:0]
+// verificar esto 
+initial begin
+		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/registros.mem", rf); // cambiar ruta de cada uno
+	end
 // verificar esto 
 always_ff@(posedge clk)
 	if (WE3) rf[A3] <= WD3;
