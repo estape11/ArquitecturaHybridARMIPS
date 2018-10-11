@@ -13,7 +13,10 @@ module PixelMemory #(parameter N = 32, I = 640, J = 240)
 		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/pix.mem", mem); // cambiar ruta de cada uno
 	end
 	always_ff @(negedge clk) begin
-		if (enable) mem[j][i]<= data_in;	
+		if (enable) begin 
+			mem[j][ix2]<= data_in[0];
+			mem[j][ix2p1]<= data_in[1];
+		end
 	end
 	
 	always_ff @(posedge clk) begin
