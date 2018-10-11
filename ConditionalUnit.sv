@@ -47,10 +47,10 @@ module ConditionalUnit (input logic z, v, n, enable1, enable2, clk, // enable1 e
 	assign regFlags[2]=n;
 	Register #(3) REG (regFlags, clk, enable1, regMem);
 	mux3 #(1) MUX (regMem[0] & 1'b1, // z==1
-						regMem[0] ^~ 1'b0, // z==0
-						regMem[2] ^~ regMem[1], // n==v
+					 ~(regMem[0] ^ 1'b0), // z==0
+					 ~(regMem[2] ^ regMem[1]), // n==v
 						regMem[2] ^ regMem[1], // n!=v
-						(regMem[0] ^~ 1'b0) & (regMem[2] ^~ regMem[1]), // z==0 y n==v
+					 ~(regMem[0] ^ 1'b0) & ~(regMem[2] ^ regMem[1]), // z==0 y n==v
 						(regMem[0] & 1'b1) | (regMem[2] ^ regMem[1]), // z==1 o n!=v
 						1'b0, // vacio
 						1'b1, // salto incondicional

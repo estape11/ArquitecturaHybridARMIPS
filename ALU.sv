@@ -88,22 +88,24 @@ module ALU #(parameter N=32)
 				 input logic [3:0] sel,
 				 output logic z, n, v, // banderas zero, negativo, overflow
 				 output logic [N-1:0] result);
-	logic [N-1:0] outAND, outOR, outADD, selB, outC2, outShift, nLO, nHI;
+	logic [N-1:0] outAND, outOR, outADD, selB, outC2, outShift, nLO, nHI, Ra, Rb;
 	logic HI, LO, selShift, cout; 
 	assign HI = 1'b1;
 	assign LO = 1'b0;
 	assign nLO = {N{LO}};
 	assign nHI = {N{HI}};
 	assign selShift = (sel == 4'b11) ? HI : LO; // shift left o right
-	assign selB = (sel == 4'b1) ? b : outC2; // resta o suma
+	assign selB = (sel == 4'b1) ? Rb : outC2; // resta o suma
 	assign n = result[N-1];
 	assign z = (result == nLO) ? 1'b1 : 1'b0;
-	nBitsAND #(N) AND (a, b, outAND);
-	nBitsADD #(N) ADD (a, selB, LO, outADD, v, cout);
-	nBitsOR #(N) OR (a ,b,outOR);
-	nBitsC2 #(N) C2 (b, outC2);
-	nBitsShift #(N) SHIFT (a, b, selShift, outShift);
-	mux4 #(N) MUX (nLO, outADD, outADD, outShift, outShift, outAND, outOR, b, a, nHI, nHI, nHI, nHI, nHI, nHI, nHI,
+	assign Ra = (sel != 4'b1001)? a : b;
+	assign Rb = (sel != 4'b1001)? b : a;
+	nBitsAND #(N) AND (Ra, Rb, outAND);
+	nBitsADD #(N) ADD (Ra, selB, LO, outADD, v, cout);
+	nBitsOR #(N) OR (Ra, Rb, outOR);
+	nBitsC2 #(N) C2 (Rb, outC2);
+	nBitsShift #(N) SHIFT (Ra, Rb, selShift, outShift);
+	mux4 #(N) MUX (nLO, outADD, outADD, outShift, outShift, outAND, outOR, Rb, Ra, outADD, nHI, nHI, nHI, nHI, nHI, nHI,
 						sel, result);
 	
 endmodule

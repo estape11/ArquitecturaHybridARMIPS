@@ -43,7 +43,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b10;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -79,7 +79,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b0111;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -97,7 +97,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b110;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -111,11 +111,11 @@ module ControlUnit(input logic [9:0] InstHeader,
 					RegWrite<=1'b0;
 					RsSrc<=1'b0;
 					PAUOp<=1'b0;
-					FlagWrite<=1'b0;
+					FlagWrite<=1'b1;
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
-					ALUControl<=4'b0010;
-					CondFlag<=3'b0;
+					ALUControl<=4'b10;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -133,7 +133,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b11;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -151,7 +151,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b1;
 					BranchInst<=1'b0;
 					ALUControl<=4'b100;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -189,7 +189,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b10;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -207,7 +207,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b1;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -225,7 +225,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b1000;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -243,7 +243,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b110;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -260,8 +260,8 @@ module ControlUnit(input logic [9:0] InstHeader,
 					FlagWrite<=1'b1;
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
-					ALUControl<=4'b10;
-					CondFlag<=3'b0;
+					ALUControl<=4'b1001;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -279,7 +279,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b11;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -297,7 +297,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b100;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b0;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -315,7 +315,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b0;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b1;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -333,7 +333,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 					ALUSrc<=1'b0;
 					BranchInst<=1'b0;
 					ALUControl<=4'b0;
-					CondFlag<=3'b0;
+					CondFlag<=InstHeader[9:7]; // con condicional
 					ResultSrc<=1'b1;
 					MemWrite<=1'b0;
 					MemPWrite<=1'b0;
@@ -390,7 +390,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 				ALUSrc<=1'b0;
 				BranchInst<=1'b0;
 				ALUControl<=4'b1000;
-				CondFlag<=3'b0;
+				CondFlag<=InstHeader[9:7]; // con condicional
 				ResultSrc<=1'b0;
 				MemWrite<=1'b0;
 				MemPWrite<=1'b0;
@@ -408,7 +408,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 				ALUSrc<=1'b0;
 				BranchInst<=1'b0;
 				ALUControl<=4'b1000;
-				CondFlag<=3'b0;
+				CondFlag<=InstHeader[9:7]; // con condicional
 				ResultSrc<=1'b0;
 				MemWrite<=1'b0;
 				MemPWrite<=1'b1;
@@ -426,7 +426,7 @@ module ControlUnit(input logic [9:0] InstHeader,
 				ALUSrc<=1'b1;
 				BranchInst<=1'b0;
 				ALUControl<=4'b1;
-				CondFlag<=3'b0;
+				CondFlag<=InstHeader[9:7]; // con condicional
 				ResultSrc<=1'b0;
 				MemWrite<=1'b0;
 				MemPWrite<=1'b0;

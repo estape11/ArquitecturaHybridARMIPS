@@ -54,5 +54,5 @@ module nBitsADD #(parameter N=32)
 			end
    endgenerate
 	assign cout = carry[N-1];
-	assign overflow = carry[N-1] ^ carry[N-2]; // C_[n] == C_[n-1] ? produce overflow
+	assign overflow = (carry[N-1] ^ carry[N-2]) | 1'b0; // C_[n] == C_[n-1] ? produce overflow
 endmodule 
