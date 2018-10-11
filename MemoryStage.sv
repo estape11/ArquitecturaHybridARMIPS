@@ -45,8 +45,9 @@ module MemoryStage #(parameter N = 32)
 	
 	Memory data_memory(clk, MEMWrite, address, WriteData, ReadDataDataMem);
 	
-	PixelsMemory p_memory(clk, MemPWrite, address, WriteData, ReadDataPixMem);
-	
+	//PixelsMemory p_memory(clk, MemPWrite, address, WriteData, ReadDataPixMem);
+	PixelMemory p_memory(clk, MEMWrite, address, WriteData, ReadDataPixMem);
+
 	assign ALUresultOut = address;
 	assign RdOut = RdIn;
 	assign PCSrcOut = PCSrc;
