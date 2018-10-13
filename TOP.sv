@@ -1,6 +1,6 @@
-module TOP(input logic clk, output logic [6:0] inst7, inst6, inst5, inst4, inst3, inst2, inst1, inst0);
+module TOP(input logic clk, input logic [2:0] sel, output logic [6:0] inst7, inst6, inst5, inst4, inst3, inst2, inst1, inst0);
 	logic halt, reset;
-	logic [31:0] inst;
+	logic [31:0] inst, FetchVisu, DecoVisu, ExeVisu, MemVisu, MemPixVisu, WBVisu;
 	assign halt=1'b0;
 	assign reset=1'b0;
 	
@@ -20,5 +20,7 @@ module TOP(input logic clk, output logic [6:0] inst7, inst6, inst5, inst4, inst3
 												inst6[6],inst6[5],inst6[4],inst6[3],inst6[2],inst6[1],inst6[0]);
 	Display_7segments_controller D7 (inst[31],inst[30],inst[29],inst[28],
 												inst7[6],inst7[5],inst7[4],inst7[3],inst7[2],inst7[1],inst7[0]);
-	ArquitecturaHybridARMIPS ARMIPS (~clk, reset, halt, inst); // por el boton
+	assign inst = (sel==3'b0)? FetchVisu : (sel==3'b1)? DecoVisu : (sel==3'b10)? ExeVisu : (sel==3'b11)? MemVisu : 
+					  (sel==3'b100)? MemPixVisu : (sel==3'b101)? WBVisu : (sel==3'b110)? 32'hFFFFFFFF : 32'hFFFFFFFF;
+	ArquitecturaHybridARMIPS ARMIPS (~clk, reset, halt, FetchVisu, DecoVisu, ExeVisu, MemVisu, MemPixVisu, WBVisu); // por el boton
 endmodule 

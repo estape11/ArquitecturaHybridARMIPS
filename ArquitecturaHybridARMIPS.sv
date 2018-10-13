@@ -27,7 +27,7 @@
 ***********************************************
 **/
 module ArquitecturaHybridARMIPS(input logic clk, reset, halt, // halt para detener la ejecucion
-										  output logic [31:0] outFE); // es la instruccion entrante al pipeline
+										  output logic [31:0] outFE, DecoVisu, ExeVisu, MemVisu, MemPixVisu, WBVisu); // es la instruccion entrante al pipeline
 	logic enable;
 	logic [31:0] inDE, PC, DataWrite, PCalu, IOIn;
 	logic [3:0] Rd;
@@ -37,6 +37,26 @@ module ArquitecturaHybridARMIPS(input logic clk, reset, halt, // halt para deten
 	logic [104:0] outMEM, inWB;
 	assign enable = ~halt & 1'b1;
 	assign IOIn = 32'b0;
+	
+	// Asignaciones para la visualizacion
+	
+	assign DecoVisu[31:28] = inDE[17:14]; // Rd
+	assign DecoVisu[27:24] = inDE[21:18]; // Rn
+	assign DecoVisu[23:20] = inDE[13:10]; // Rs
+	assign DecoVisu[19:4] = outDE[16:0]; // inmediato
+	assign DecoVisu[3:2] = 2'b0; // relleno
+	assign DecoVisu[1:0] = inDE[28:27];//tipo
+	
+	assign ExeVisu = outEXE[31:0];
+	
+	assign MemVisu = outMEM[31:0];
+	
+	assign MemPixVisu = outMEM[63:32];
+	
+	assign WBVisu = DataWrite;
+	
+	// Asignaciones para la visualizacion
+	
 	Fetch #(32) IF (clk, PCSrc,
 		  		   DataWrite,
 				   outFE, PC);
