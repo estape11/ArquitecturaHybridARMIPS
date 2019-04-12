@@ -42,7 +42,7 @@ module RegisterFile #(parameter N=4, M=32)
 logic [31:0]rf[16]; // [14:0]
 // verificar esto 
 initial begin
-		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/registros.mem", rf); // cambiar ruta de cada uno
+		$readmemb("D:/ArquiI/ArquitecturaHybridARMIPS/registros.mem", rf); // cambiar ruta de cada uno
 	end
 // verificar esto 
 always_ff@(posedge clk)

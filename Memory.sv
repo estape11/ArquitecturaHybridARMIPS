@@ -35,7 +35,7 @@ module Memory #(parameter N = 32, M=77056) // 2^8 +240*320 = 77056 dura 10 minut
 
 	logic [N-1:0] mem [M];
 	initial begin
-		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/ram.mem", mem); // cambiar ruta de cada uno
+		$readmemb("D:/ArquiI/ArquitecturaHybridARMIPS/ram.mem", mem); // cambiar ruta de cada uno
 	end
 	always_ff @(negedge clk) begin
 		if (wr == 1)

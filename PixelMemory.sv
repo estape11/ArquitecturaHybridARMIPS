@@ -10,7 +10,7 @@ module PixelMemory #(parameter N = 32, I = 640, J = 240)
 	assign ix2=i<<2'b1;
 	assign ix2p1 =ix2+1'b1;
 	initial begin
-		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/pix.mem", mem); // cambiar ruta de cada uno
+		$readmemb("D:/ArquiI/ArquitecturaHybridARMIPS/pix.mem", mem); // cambiar ruta de cada uno
 	end
 	always_ff @(negedge clk) begin
 		if (enable) begin 

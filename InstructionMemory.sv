@@ -32,7 +32,7 @@ module InstructionMemory #(parameter N = 32, M=2048) // 8kB
 	logic [N-1:0] mem [M];
 	assign data_out = mem[address];
 	initial begin
-		$readmemb("C:/Users/estape11/Documents/Proyecto_1_Arquitectura_I/ArquitecturaHybridARMIPS/instrucciones.mem", mem); // cambiar ruta de cada uno
+		$readmemb("D:/ArquiI/ArquitecturaHybridARMIPS/instrucciones.mem", mem); // cambiar ruta de cada uno
 	end
 	
 endmodule
